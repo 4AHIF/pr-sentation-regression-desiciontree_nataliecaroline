@@ -4,13 +4,25 @@ format:
   html:
     toc: true
     html-math-method: katex
+    theme: cosmo
 ---
 
-# Einleitung
-Wie funktioiert Quarto? Es ist eine Mischung aus R Markdown und Jupyter Notebooks. Es ist eine Open-Source-Software, die von RStudio entwickelt wurde. Es ermöglicht es, Dokumente in verschiedenen Formaten zu erstellen, darunter HTML, PDF und Word. Es unterstützt auch die Integration von R, Python, Julia und Observable JavaScript. Es ist eine großartige Möglichkeit, um interaktive Dokumente zu erstellen, die Code, Text und Visualisierungen enthalten. Es ist auch eine großartige Möglichkeit, um Dokumente zu erstellen, die leicht zu teilen und zu veröffentlichen sind. In diesem Dokument werden wir die Grundlagen von Quarto kennenlernen und ein einfaches Dokument erstellen.
+## Aufbau
+umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter
+•	Wurzelknoten: Startpunkt des Entscheidungsbaums
+•	Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird
+•	Zweige: Optionen/Bedingungen, die von Knoten ausgehen
+•	Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen
+Darstellung in Diagrammen
 
-## Subüberschrift
-sdfsdfsdf
+
+# Einsatzgebiete
+•	Businessanalysen: Bewertung von Geschäftsideen
+•	Medizin: Diagnoseunterstützung
+•	Maschinelles Lernen: Klassifikation in Entscheidungsmodelle
+•	Softwareentwicklung: Steuerung von Abläufen/Benutzer
+besonders in der KI genutzt
+
 
 # Code
 Hier ist ein einfaches Beispiel für einen Code-Block in Quarto:
