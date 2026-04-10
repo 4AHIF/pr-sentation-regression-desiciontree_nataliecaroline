@@ -1,0 +1,197 @@
+---
+title: "Entscheidungsbäume"
+author: "Natalie Pilz und Caroline Schörghofer"
+format: 
+  revealjs:
+    theme: moon
+    slide-number: true
+    transition: slide
+    highlight-style: dracula 
+    code-line-numbers: true
+
+---
+
+
+
+# Inhalsverzeichnis
+
+<style>
+/* Globaler Text-Style */
+.reveal section p,
+.reveal section ul li {
+color: #ffffff !important;
+font-size: 0.9em;
+}
+
+.reveal h2 {
+color: #00d1b2 !important;
+font-size: 1.6em !important;
+text-transform: none !important;
+margin-bottom: 0.8em !important;
+}
+
+/* Styling für die Code-Blöcke /
+.reveal .sourceCode {
+background-color: #282a36 !important; / Dunkler Hintergrund /
+border-radius: 12px !important;       / Abgerundete Ecken /
+padding: 20px !important;             / Mehr Platz innen /
+box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important; / Tiefe durch Schatten /
+border: 1px solid #44475a !important; / Subtile Umrandung */
+overflow: hidden !important;
+}
+
+
+.reveal pre.sourceCode code {
+font-size: 0.75em !important;
+line-height: 1.4 !important;
+white-space: pre-wrap !important;
+
+}
+</style>
+
+- Was ist ein Entscheidungsbaum?
+- Aufbau eines Entscheidungsbaumes
+- Wie denkt der Algorythmus?
+- Vorteile von Entscheidungsbäumen
+- typische Missverständnisse beim Einsatz
+
+
+# Was ist ein Entscheidungsbaum?
+
+- grafisches Modell -> Darstellung von Entscheidungsprozessen
+- wie Entscheidungen auf verschiedenene Ergebnisse auswirken können
+- oft zur Unterstützung der Entscheidungsfindung in Wirtschaft, Medizin, IT und maschinellem Lernen 
+
+# Arten von Entscheidungsbäumen
+
+- Klassifikationsbäume: kategorische Zielvariable (z.B. Ja/Nein) "Was ist es?"
+- Regressionsbäume: kontinuierliche Zielvariable (z.B. Preis, Temperatur) "Wie viel ist es?"
+- Entscheidungsbäume für Zeitreihen: Vorhersage von zeitabhängigen Daten
+- Random Forests: Ensemble von Entscheidungsbäumen zur Verbesserung der Vorhersagegenau "Schwarmintelligenz"
+
+
+# Aufbau eines Entscheidungsbaumes
+
+- umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter
+- Wurzelknoten: Startpunkt des Entscheidungsbaums
+- Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird
+- Zweige: Optionen/Bedingungen, die von Knoten ausgehen
+- Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen
+
+# Aufbau eines Entscheidungsbaumes
+
+![So sieht ein Baum aus](Root-Node.gif){width="50%" fig-align="center"}
+
+
+# Darstellung in Diagrammen
+
+- jeder Pfad von der Wurzel zu einem Blatt repräsentiert eine Entscheidungsregel oder einen Entscheidungsprozess
+- die Struktur ermöglicht es, komplexe Entscheidungen in übersichtliche Schritte zu unterteilen
+
+
+
+# Vorteile von Entscheidungsbäumen
+
+- Nachvollziehbarkeit
+- Übersichtlichkeit
+- Flexibilität
+- Transparenz
+
+# typische Missverständnisse beim Einsatz
+
+- Annahme, dass Entscheidungsbäume immer die beste Wahl sind
+- Übermäßige Komplexität durch zu viele Knoten
+
+
+
+
+# Wie denkt der Algorithmus?
+
+Der Computer versucht, die Daten so zu trennen, dass die Gruppen danach möglichst "sortiert" sind.
+
+1. **Frage wählen:** Welche Eigenschaft teilt die Daten am besten?
+2. **Split:** Die Daten werden in zwei Gruppen geteilt.
+3. **Wiederholung:** Das passiert so lange, bis eine Gruppe "rein" ist (z.B. nur noch eine Blumenart enthält).
+
+---
+
+# Code Beispiel
+## Vorbereitung
+
+```bash
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+```
+
+```{python}
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+
+
+```
+
+## Daten laden (Schwertlilien-Datensatz)
+
+```bash
+    iris = load_iris()  
+X, y = iris.data, iris.target
+```
+
+```{python}
+iris = load_iris()  
+X, y = iris.data, iris.target
+```
+
+## Aufteilen: 80% Training, 20% Test
+
+```bash
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+```{python}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+
+
+## Modell erstellen & trainieren
+
+```bash
+clf = DecisionTreeClassifier(max_depth=3)
+clf.fit(X_train, y_train)
+```
+
+```{python}
+clf = DecisionTreeClassifier(max_depth=3)
+clf.fit(X_train, y_train)
+```
+
+## Genauigkeit prüfen
+
+```bash
+score = clf.score(X_test, y_test)
+print(f"Genauigkeit: {score * 100:.1f}%")
+```
+```{python}
+score = clf.score(X_test, y_test)
+print(f"Genauigkeit: {score * 100:.1f}%")
+```
+
+## Den Baum grafisch darstellen
+
+```bash
+plt.figure(figsize=(10,6))
+plot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)
+plt.show()
+```
+```{python}
+plt.figure(figsize=(10,6))
+plot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)
+plt.show()
+```
