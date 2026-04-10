@@ -4,13 +4,20 @@
     "href": "praesentation.html",
     "title": "Entscheidungsbäume",
     "section": "",
-    "text": "umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
+    "text": "Ein Entscheidungsbaum ist eine grafische Darstellung bzw. ein Modell, das Entscheidungen und deren mögliche Konsequenzen darstellt. Er besteht aus Knoten, die Entscheidungen oder Ereignisse repräsentieren, und Zweigen, die die möglichen Ergebnisse oder Optionen darstellen. Entscheidungsbäume werden häufig in der Datenanalyse, im maschinellen Lernen und in der Entscheidungsfindung verwendet, um komplexe Probleme zu strukturieren und zu visualisieren."
+  },
+  {
+    "objectID": "praesentation.html#defintion",
+    "href": "praesentation.html#defintion",
+    "title": "Entscheidungsbäume",
+    "section": "",
+    "text": "Ein Entscheidungsbaum ist eine grafische Darstellung bzw. ein Modell, das Entscheidungen und deren mögliche Konsequenzen darstellt. Er besteht aus Knoten, die Entscheidungen oder Ereignisse repräsentieren, und Zweigen, die die möglichen Ergebnisse oder Optionen darstellen. Entscheidungsbäume werden häufig in der Datenanalyse, im maschinellen Lernen und in der Entscheidungsfindung verwendet, um komplexe Probleme zu strukturieren und zu visualisieren."
   },
   {
     "objectID": "praesentation.html#aufbau",
     "href": "praesentation.html#aufbau",
     "title": "Entscheidungsbäume",
-    "section": "",
-    "text": "umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
+    "section": "Aufbau",
+    "text": "Aufbau\numgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
   }
 ]

@@ -7,6 +7,10 @@ format:
     theme: cosmo
 ---
 
+## Defintion
+Ein Entscheidungsbaum ist eine grafische Darstellung bzw. ein Modell, das Entscheidungen und deren mögliche Konsequenzen darstellt. Er besteht aus Knoten, die Entscheidungen oder Ereignisse repräsentieren, und Zweigen, die die möglichen Ergebnisse oder Optionen darstellen. Entscheidungsbäume werden häufig in der Datenanalyse, im maschinellen Lernen und in der Entscheidungsfindung verwendet, um komplexe Probleme zu strukturieren und zu visualisieren.
+
+
 ## Aufbau
 umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter
 •	Wurzelknoten: Startpunkt des Entscheidungsbaums
@@ -26,7 +30,3 @@ besonders in der KI genutzt
 
 # Code
 Hier ist ein einfaches Beispiel für einen Code-Block in Quarto:
-
-```bash
-echo "Hello, World!"
-```
