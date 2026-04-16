@@ -1,5 +1,6 @@
 ---
-title: "Entscheidungsbäume"
+title: "Entscheidungsbäume-Handout"
+author: "Natalie Pilz und Caroline Schörghofer"
 format:
   html:
     toc: true
@@ -19,14 +20,18 @@ umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter
 •	Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen
 Darstellung in Diagrammen
 
+## Arten von Entscheidungsbäumen
+•	Klassifikationsbäume: kategorische Zielvariable (z.B. Ja/Nein) "Was ist es?"
+•	Regressionsbäume: kontinuierliche Zielvariable (z.B. Preis, Temperatur) "Wie viel ist es?"
+•	Entscheidungsbäume für Zeitreihen: Vorhersage von zeitabhängigen Daten
+•	Random Forests: Ensemble von Entscheidungsbäumen zur Verbesserung der Vorhersagegenau "Schwarmintelligenz"
 
-# Einsatzgebiete
+## Einsatzgebiete
 •	Businessanalysen: Bewertung von Geschäftsideen
 •	Medizin: Diagnoseunterstützung
 •	Maschinelles Lernen: Klassifikation in Entscheidungsmodelle
 •	Softwareentwicklung: Steuerung von Abläufen/Benutzer
 besonders in der KI genutzt
 
-
-# Code
-Hier ist ein einfaches Beispiel für einen Code-Block in Quarto:
+## Darstellung
+!(Root-Node.gif){width="50%" fig-align="center"}
