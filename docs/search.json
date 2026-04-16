@@ -2,15 +2,134 @@
   {
     "objectID": "praesentation.html",
     "href": "praesentation.html",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "",
+    "text": "Ein Entscheidungsbaum ist ein Modell, das Entscheidungen und deren mögliche Folgen grafisch darstellt.\nDabei wird ein Problem Schritt für Schritt in kleinere Entscheidungen zerlegt.\nMan kann sich das wie einen Baum vorstellen: - oben startet man mit einer Frage - dann verzweigt man sich je nach Antwort - am Ende erhält man ein Ergebnis\nSolche Modelle werden häufig verwendet in: - Wirtschaft (z. B. Entscheidungen treffen) - Medizin (Diagnosen) - Informatik und Künstlicher Intelligenz"
+  },
+  {
+    "objectID": "praesentation.html#defintion",
+    "href": "praesentation.html#defintion",
     "title": "Entscheidungsbäume",
     "section": "",
-    "text": "umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
+    "text": "Ein Entscheidungsbaum ist eine grafische Darstellung bzw. ein Modell, das Entscheidungen und deren mögliche Konsequenzen darstellt. Er besteht aus Knoten, die Entscheidungen oder Ereignisse repräsentieren, und Zweigen, die die möglichen Ergebnisse oder Optionen darstellen. Entscheidungsbäume werden häufig in der Datenanalyse, im maschinellen Lernen und in der Entscheidungsfindung verwendet, um komplexe Probleme zu strukturieren und zu visualisieren."
   },
   {
     "objectID": "praesentation.html#aufbau",
     "href": "praesentation.html#aufbau",
     "title": "Entscheidungsbäume",
+    "section": "Aufbau",
+    "text": "Aufbau\numgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
+  },
+  {
+    "objectID": "praesentation.html#was-sind-entscheidungsbäume",
+    "href": "praesentation.html#was-sind-entscheidungsbäume",
+    "title": "Entscheidungsbäume-Handout",
     "section": "",
-    "text": "umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen"
+    "text": "Ein Entscheidungsbaum ist ein Modell, das Entscheidungen und deren mögliche Folgen grafisch darstellt.\nDabei wird ein Problem Schritt für Schritt in kleinere Entscheidungen zerlegt.\nMan kann sich das wie einen Baum vorstellen: - oben startet man mit einer Frage - dann verzweigt man sich je nach Antwort - am Ende erhält man ein Ergebnis\nSolche Modelle werden häufig verwendet in: - Wirtschaft (z. B. Entscheidungen treffen) - Medizin (Diagnosen) - Informatik und Künstlicher Intelligenz"
+  },
+  {
+    "objectID": "praesentation.html#aufbau-eines-entscheidungsbaums",
+    "href": "praesentation.html#aufbau-eines-entscheidungsbaums",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Aufbau eines Entscheidungsbaums",
+    "text": "Aufbau eines Entscheidungsbaums\nEin Entscheidungsbaum besteht aus mehreren Teilen:\n\nWurzelknoten\nStartpunkt des Baums (erste Entscheidung)\nEntscheidungsknoten\nStellen, an denen Fragen gestellt werden\nZweige\nMögliche Antworten oder Wege\nBlattknoten\nEndpunkte mit dem Ergebnis\n\nJeder Weg von der Wurzel bis zu einem Blatt beschreibt eine komplette Entscheidungsregel.\n\n\n\nBeispiel Entscheidungsbaum"
+  },
+  {
+    "objectID": "praesentation.html#arten-von-entscheidungsbäumen",
+    "href": "praesentation.html#arten-von-entscheidungsbäumen",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Arten von Entscheidungsbäumen",
+    "text": "Arten von Entscheidungsbäumen\nEs gibt verschiedene Typen, je nach Problem:\n\nKlassifikationsbäume\nErgebnis ist eine Kategorie (z. B. Ja/Nein)\n→ „Was ist es?“\nRegressionsbäume\nErgebnis ist ein Zahlenwert (z. B. Preis)\n→ „Wie viel ist es?“\nRandom Forests\nKombination aus vielen Entscheidungsbäumen\n→ genauere Ergebnisse durch mehrere Modelle"
+  },
+  {
+    "objectID": "praesentation.html#wie-arbeitet-der-algorithmus",
+    "href": "praesentation.html#wie-arbeitet-der-algorithmus",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Wie arbeitet der Algorithmus?",
+    "text": "Wie arbeitet der Algorithmus?\nEin Entscheidungsbaum versucht, Daten so aufzuteilen, dass ähnliche Dinge zusammenkommen.\nAblauf:\n\nDer Algorithmus sucht die beste Frage, um Daten zu trennen\n\nDie Daten werden in Gruppen aufgeteilt\n\nDieser Vorgang wird wiederholt\n\nAm Ende entstehen möglichst „reine“ Gruppen\n\nDas Ziel ist, dass jede Gruppe möglichst eindeutig ist."
+  },
+  {
+    "objectID": "praesentation.html#vorteile",
+    "href": "praesentation.html#vorteile",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Vorteile",
+    "text": "Vorteile\n\nleicht verständlich\n\ngut nachvollziehbar\n\nvisuell darstellbar\n\nvielseitig einsetzbar"
+  },
+  {
+    "objectID": "praesentation.html#nachteile-typische-fehler",
+    "href": "praesentation.html#nachteile-typische-fehler",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Nachteile / typische Fehler",
+    "text": "Nachteile / typische Fehler\n\nkann zu komplex werden (zu viele Verzweigungen)\n\npasst sich manchmal zu stark an Trainingsdaten an\n\nnicht immer die beste Methode für jedes Problem"
+  },
+  {
+    "objectID": "praesentation.html#einsatzgebiete",
+    "href": "praesentation.html#einsatzgebiete",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Einsatzgebiete",
+    "text": "Einsatzgebiete\nEntscheidungsbäume werden in vielen Bereichen verwendet:\n\nBusiness → Entscheidungen analysieren\n\nMedizin → Diagnoseunterstützung\n\nKI / Machine Learning → Daten klassifizieren\n\nSoftwareentwicklung → Abläufe modellieren"
+  },
+  {
+    "objectID": "praesentation.html#beispiel-machine-learning",
+    "href": "praesentation.html#beispiel-machine-learning",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Beispiel (Machine Learning)",
+    "text": "Beispiel (Machine Learning)\nIm folgenden Beispiel wird ein Entscheidungsbaum verwendet, um verschiedene Blumenarten zu unterscheiden.\n\nBibliotheken\n\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier, plot_tree\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.datasets import load_iris\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "baumprsentation.html",
+    "href": "baumprsentation.html",
+    "title": "Entscheidungsbäume",
+    "section": "",
+    "text": "Was ist ein Entscheidungsbaum?\nAufbau eines Entscheidungsbaumes\nWie denkt der Algorythmus?\nVorteile von Entscheidungsbäumen\ntypische Missverständnisse beim Einsatz"
+  },
+  {
+    "objectID": "baumprsentation.html#vorbereitung",
+    "href": "baumprsentation.html#vorbereitung",
+    "title": "Entscheidungsbäume",
+    "section": "Vorbereitung",
+    "text": "Vorbereitung\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.datasets import load_iris\nimport matplotlib.pyplot as plt\nfrom sklearn.tree import plot_tree\n\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.datasets import load_iris\nimport matplotlib.pyplot as plt\nfrom sklearn.tree import plot_tree"
+  },
+  {
+    "objectID": "baumprsentation.html#daten-laden-schwertlilien-datensatz",
+    "href": "baumprsentation.html#daten-laden-schwertlilien-datensatz",
+    "title": "Entscheidungsbäume",
+    "section": "Daten laden (Schwertlilien-Datensatz)",
+    "text": "Daten laden (Schwertlilien-Datensatz)\n    iris = load_iris()  \nX, y = iris.data, iris.target\n\niris = load_iris()  \nX, y = iris.data, iris.target"
+  },
+  {
+    "objectID": "baumprsentation.html#aufteilen-80-training-20-test",
+    "href": "baumprsentation.html#aufteilen-80-training-20-test",
+    "title": "Entscheidungsbäume",
+    "section": "Aufteilen: 80% Training, 20% Test",
+    "text": "Aufteilen: 80% Training, 20% Test\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)"
+  },
+  {
+    "objectID": "baumprsentation.html#modell-erstellen-trainieren",
+    "href": "baumprsentation.html#modell-erstellen-trainieren",
+    "title": "Entscheidungsbäume",
+    "section": "Modell erstellen & trainieren",
+    "text": "Modell erstellen & trainieren\nclf = DecisionTreeClassifier(max_depth=3)\nclf.fit(X_train, y_train)\n\nclf = DecisionTreeClassifier(max_depth=3)\nclf.fit(X_train, y_train)\n\nDecisionTreeClassifier(max_depth=3)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.DecisionTreeClassifierDecisionTreeClassifier(max_depth=3)"
+  },
+  {
+    "objectID": "baumprsentation.html#genauigkeit-prüfen",
+    "href": "baumprsentation.html#genauigkeit-prüfen",
+    "title": "Entscheidungsbäume",
+    "section": "Genauigkeit prüfen",
+    "text": "Genauigkeit prüfen\nscore = clf.score(X_test, y_test)\nprint(f\"Genauigkeit: {score * 100:.1f}%\")\n\nscore = clf.score(X_test, y_test)\nprint(f\"Genauigkeit: {score * 100:.1f}%\")\n\nGenauigkeit: 100.0%"
+  },
+  {
+    "objectID": "baumprsentation.html#den-baum-grafisch-darstellen",
+    "href": "baumprsentation.html#den-baum-grafisch-darstellen",
+    "title": "Entscheidungsbäume",
+    "section": "Den Baum grafisch darstellen",
+    "text": "Den Baum grafisch darstellen\nplt.figure(figsize=(10,6))\nplot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)\nplt.show()\n\nplt.figure(figsize=(10,6))\nplot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)\nplt.show()"
+  },
+  {
+    "objectID": "praesentation.html#beispiel-aus-dem-maschinellen-lernen",
+    "href": "praesentation.html#beispiel-aus-dem-maschinellen-lernen",
+    "title": "Entscheidungsbäume-Handout",
+    "section": "Beispiel aus dem maschinellen Lernen",
+    "text": "Beispiel aus dem maschinellen Lernen\nEin bekanntes Beispiel für Entscheidungsbäume ist die Bestimmung von Blumenarten mit dem Iris-Datensatz.\nDieser Datensatz enthält Messwerte von Schwertlilien, zum Beispiel:\n\nLänge des Kelchblatts\nBreite des Kelchblatts\nLänge des Blütenblatts\nBreite des Blütenblatts\n\nDer Entscheidungsbaum versucht anhand dieser Merkmale zu erkennen, um welche Blumenart es sich handelt.\nZum Beispiel könnte der Baum vereinfacht so entscheiden:\n\nIst die Blütenblattlänge kleiner als 2,5 cm?\n→ Ja: Setosa\nWenn nein: Ist die Blütenblattbreite kleiner als 1,75 cm?\n→ Ja: Versicolor\nSonst: Virginica\n\nSo trifft der Entscheidungsbaum Schritt für Schritt Entscheidungen, bis am Ende eine Klasse feststeht.\n\nBeispielcode\n\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.datasets import load_iris\nimport matplotlib.pyplot as plt\nfrom sklearn.tree import plot_tree\n\n# Daten laden\niris = load_iris()\nX, y = iris.data, iris.target\n\n# Aufteilen der Daten\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Modell erstellen\nclf = DecisionTreeClassifier(max_depth=3)\nclf.fit(X_train, y_train)\n\n# Genauigkeit prüfen\nscore = clf.score(X_test, y_test)\nprint(f\"Genauigkeit: {score * 100:.1f}%\")\n\n# Baum darstellen\nplt.figure(figsize=(10, 6))\nplot_tree(\n    clf,\n    filled=True,\n    feature_names=iris.feature_names,\n    class_names=iris.target_names\n)\nplt.show()"
   }
 ]

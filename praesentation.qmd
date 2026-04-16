@@ -1,5 +1,6 @@
 ---
-title: "Entscheidungsbäume"
+title: "Entscheidungsbäume-Handout"
+author: "Natalie Pilz und Caroline Schörghofer"
 format:
   html:
     toc: true
@@ -7,26 +8,166 @@ format:
     theme: cosmo
 ---
 
-## Aufbau
-umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter
-•	Wurzelknoten: Startpunkt des Entscheidungsbaums
-•	Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird
-•	Zweige: Optionen/Bedingungen, die von Knoten ausgehen
-•	Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen
-Darstellung in Diagrammen
+## Was sind Entscheidungsbäume?
+
+Ein Entscheidungsbaum ist ein Modell, das Entscheidungen und deren mögliche Folgen grafisch darstellt.  
+Dabei wird ein Problem Schritt für Schritt in kleinere Entscheidungen zerlegt.
+
+Man kann sich das wie einen Baum vorstellen:
+- oben startet man mit einer Frage
+- dann verzweigt man sich je nach Antwort
+- am Ende erhält man ein Ergebnis
+
+Solche Modelle werden häufig verwendet in:
+- Wirtschaft (z. B. Entscheidungen treffen)
+- Medizin (Diagnosen)
+- Informatik und Künstlicher Intelligenz
+
+---
+
+## Aufbau eines Entscheidungsbaums
+
+Ein Entscheidungsbaum besteht aus mehreren Teilen:
+
+- **Wurzelknoten**  
+  Startpunkt des Baums (erste Entscheidung)
+
+- **Entscheidungsknoten**  
+  Stellen, an denen Fragen gestellt werden
+
+- **Zweige**  
+  Mögliche Antworten oder Wege
+
+- **Blattknoten**  
+  Endpunkte mit dem Ergebnis
+
+Jeder Weg von der Wurzel bis zu einem Blatt beschreibt eine komplette Entscheidungsregel.
+
+![Beispiel Entscheidungsbaum](Root-Node.gif){width="50%" fig-align="center"}
+
+---
+
+## Arten von Entscheidungsbäumen
+
+Es gibt verschiedene Typen, je nach Problem:
+
+- **Klassifikationsbäume**  
+  Ergebnis ist eine Kategorie (z. B. Ja/Nein)  
+  → „Was ist es?“
+
+- **Regressionsbäume**  
+  Ergebnis ist ein Zahlenwert (z. B. Preis)  
+  → „Wie viel ist es?“
+
+- **Random Forests**  
+  Kombination aus vielen Entscheidungsbäumen  
+  → genauere Ergebnisse durch mehrere Modelle
+
+---
+
+## Wie arbeitet der Algorithmus?
+
+Ein Entscheidungsbaum versucht, Daten so aufzuteilen, dass ähnliche Dinge zusammenkommen.
+
+Ablauf:
+
+1. Der Algorithmus sucht die beste Frage, um Daten zu trennen  
+2. Die Daten werden in Gruppen aufgeteilt  
+3. Dieser Vorgang wird wiederholt  
+4. Am Ende entstehen möglichst „reine“ Gruppen
+
+Das Ziel ist, dass jede Gruppe möglichst eindeutig ist.
+
+---
+
+## Vorteile
+
+- leicht verständlich  
+- gut nachvollziehbar  
+- visuell darstellbar  
+- vielseitig einsetzbar  
+
+---
+
+## Nachteile / typische Fehler
+
+- kann zu komplex werden (zu viele Verzweigungen)  
+- passt sich manchmal zu stark an Trainingsdaten an  
+- nicht immer die beste Methode für jedes Problem  
+
+---
+
+## Einsatzgebiete
+
+Entscheidungsbäume werden in vielen Bereichen verwendet:
+
+- **Business** → Entscheidungen analysieren  
+- **Medizin** → Diagnoseunterstützung  
+- **KI / Machine Learning** → Daten klassifizieren  
+- **Softwareentwicklung** → Abläufe modellieren  
+
+---
+
+## Beispiel aus dem maschinellen Lernen
+
+Ein bekanntes Beispiel für Entscheidungsbäume ist die **Bestimmung von Blumenarten** mit dem **Iris-Datensatz**.  
+Dieser Datensatz enthält Messwerte von Schwertlilien, zum Beispiel:
+
+- Länge des Kelchblatts
+- Breite des Kelchblatts
+- Länge des Blütenblatts
+- Breite des Blütenblatts
+
+Der Entscheidungsbaum versucht anhand dieser Merkmale zu erkennen, um welche Blumenart es sich handelt.
+
+Zum Beispiel könnte der Baum vereinfacht so entscheiden:
+
+- Ist die Blütenblattlänge kleiner als 2,5 cm?  
+  → Ja: **Setosa**
+- Wenn nein: Ist die Blütenblattbreite kleiner als 1,75 cm?  
+  → Ja: **Versicolor**
+- Sonst: **Virginica**
+
+So trifft der Entscheidungsbaum Schritt für Schritt Entscheidungen, bis am Ende eine Klasse feststeht.
 
 
-# Einsatzgebiete
-•	Businessanalysen: Bewertung von Geschäftsideen
-•	Medizin: Diagnoseunterstützung
-•	Maschinelles Lernen: Klassifikation in Entscheidungsmodelle
-•	Softwareentwicklung: Steuerung von Abläufen/Benutzer
-besonders in der KI genutzt
+### Beispielcode
 
 
-# Code
-Hier ist ein einfaches Beispiel für einen Code-Block in Quarto:
+```{python}
+#| eval: false
 
-```bash
-echo "Hello, World!"
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+
+# Daten laden
+iris = load_iris()
+X, y = iris.data, iris.target
+
+# Aufteilen der Daten
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Modell erstellen
+clf = DecisionTreeClassifier(max_depth=3)
+clf.fit(X_train, y_train)
+
+# Genauigkeit prüfen
+score = clf.score(X_test, y_test)
+print(f"Genauigkeit: {score * 100:.1f}%")
+
+# Baum darstellen
+plt.figure(figsize=(10, 6))
+plot_tree(
+    clf,
+    filled=True,
+    feature_names=iris.feature_names,
+    class_names=iris.target_names
+)
+plt.show()
 ```
