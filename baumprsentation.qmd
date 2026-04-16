@@ -135,12 +135,11 @@ Kiste B: Alle Spiele zwischen 4000 € und 9000 €.
 Kiste C: Alle Spiele über 9000 €.
 
 ## Den Baum grafisch darstellen
-```{python}
-#| echo: true
+```bash
+
 # Wir testen alle Kosten-Werte von 0 bis 15.000
 test_kosten = np.arange(0, 15000, 1).reshape(-1, 1)
 vorhersage = baum.predict(test_kosten)
-
 plt.scatter(kosten, gewinn, color="red", label="Echte Spiele") # Die Punkte
 plt.plot(test_kosten, vorhersage, color="blue", label="Baum-Vorhersage") # Die Treppe
 plt.xlabel("Produktionskosten")
@@ -148,3 +147,17 @@ plt.ylabel("Gewinn")
 plt.legend()
 plt.show()
 ```
+
+# Ergebnis: Die Treppe
+```{python}
+test_kosten = np.arange(0, 15000, 1).reshape(-1, 1)
+vorhersage = baum.predict(test_kosten)
+plt.scatter(kosten, gewinn, color="red", label="Echte Spiele") # Die Punkte
+plt.plot(test_kosten, vorhersage, color="blue", label="Baum-Vorhersage") # Die Treppe
+plt.xlabel("Produktionskosten")
+plt.ylabel("Gewinn")
+plt.legend()
+plt.show()
+```
+
+# Danke für eure Aufmerksamkeit! 
