@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Natalie Pilz und Caroline Schörghofer">
 
-<title>Entscheidungsbäume</title>
+<title>Entscheidungsbäume-Handout</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,10 +119,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#defintion" id="toc-defintion" class="nav-link active" data-scroll-target="#defintion">Defintion</a></li>
-  <li><a href="#aufbau" id="toc-aufbau" class="nav-link" data-scroll-target="#aufbau">Aufbau</a></li>
+  <li><a href="#was-sind-entscheidungsbäume" id="toc-was-sind-entscheidungsbäume" class="nav-link active" data-scroll-target="#was-sind-entscheidungsbäume">Was sind Entscheidungsbäume?</a></li>
+  <li><a href="#aufbau-eines-entscheidungsbaums" id="toc-aufbau-eines-entscheidungsbaums" class="nav-link" data-scroll-target="#aufbau-eines-entscheidungsbaums">Aufbau eines Entscheidungsbaums</a></li>
+  <li><a href="#arten-von-entscheidungsbäumen" id="toc-arten-von-entscheidungsbäumen" class="nav-link" data-scroll-target="#arten-von-entscheidungsbäumen">Arten von Entscheidungsbäumen</a></li>
+  <li><a href="#wie-arbeitet-der-algorithmus" id="toc-wie-arbeitet-der-algorithmus" class="nav-link" data-scroll-target="#wie-arbeitet-der-algorithmus">Wie arbeitet der Algorithmus?</a></li>
+  <li><a href="#vorteile" id="toc-vorteile" class="nav-link" data-scroll-target="#vorteile">Vorteile</a></li>
+  <li><a href="#nachteile-typische-fehler" id="toc-nachteile-typische-fehler" class="nav-link" data-scroll-target="#nachteile-typische-fehler">Nachteile / typische Fehler</a></li>
   <li><a href="#einsatzgebiete" id="toc-einsatzgebiete" class="nav-link" data-scroll-target="#einsatzgebiete">Einsatzgebiete</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#beispiel-aus-dem-maschinellen-lernen" id="toc-beispiel-aus-dem-maschinellen-lernen" class="nav-link" data-scroll-target="#beispiel-aus-dem-maschinellen-lernen">Beispiel aus dem maschinellen Lernen</a>
+  <ul class="collapse">
+  <li><a href="#beispielcode" id="toc-beispielcode" class="nav-link" data-scroll-target="#beispielcode">Beispielcode</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -130,13 +138,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Entscheidungsbäume</h1>
+<h1 class="title">Entscheidungsbäume-Handout</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Natalie Pilz und Caroline Schörghofer </p>
+          </div>
+  </div>
     
   
     
@@ -147,24 +161,166 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="defintion" class="level2">
-<h2 class="anchored" data-anchor-id="defintion">Defintion</h2>
-<p>Ein Entscheidungsbaum ist eine grafische Darstellung bzw. ein Modell, das Entscheidungen und deren mögliche Konsequenzen darstellt. Er besteht aus Knoten, die Entscheidungen oder Ereignisse repräsentieren, und Zweigen, die die möglichen Ergebnisse oder Optionen darstellen. Entscheidungsbäume werden häufig in der Datenanalyse, im maschinellen Lernen und in der Entscheidungsfindung verwendet, um komplexe Probleme zu strukturieren und zu visualisieren.</p>
+<section id="was-sind-entscheidungsbäume" class="level2">
+<h2 class="anchored" data-anchor-id="was-sind-entscheidungsbäume">Was sind Entscheidungsbäume?</h2>
+<p>Ein Entscheidungsbaum ist ein Modell, das Entscheidungen und deren mögliche Folgen grafisch darstellt.<br>
+Dabei wird ein Problem Schritt für Schritt in kleinere Entscheidungen zerlegt.</p>
+<p>Man kann sich das wie einen Baum vorstellen: - oben startet man mit einer Frage - dann verzweigt man sich je nach Antwort - am Ende erhält man ein Ergebnis</p>
+<p>Solche Modelle werden häufig verwendet in: - Wirtschaft (z. B. Entscheidungen treffen) - Medizin (Diagnosen) - Informatik und Künstlicher Intelligenz</p>
+<hr>
 </section>
-<section id="aufbau" class="level2">
-<h2 class="anchored" data-anchor-id="aufbau">Aufbau</h2>
-<p>umgedrehter Baum: beginnt bei Wurzeln und verzweigt sich in Richtung Blätter • Wurzelknoten: Startpunkt des Entscheidungsbaums • Entscheidungsknoten: Stelle, wo Entscheidung getroffen wird • Zweige: Optionen/Bedingungen, die von Knoten ausgehen • Blattknoten: Endpunkt, die Ergebnis/Entscheidung darstellen Darstellung in Diagrammen</p>
+<section id="aufbau-eines-entscheidungsbaums" class="level2">
+<h2 class="anchored" data-anchor-id="aufbau-eines-entscheidungsbaums">Aufbau eines Entscheidungsbaums</h2>
+<p>Ein Entscheidungsbaum besteht aus mehreren Teilen:</p>
+<ul>
+<li><p><strong>Wurzelknoten</strong><br>
+Startpunkt des Baums (erste Entscheidung)</p></li>
+<li><p><strong>Entscheidungsknoten</strong><br>
+Stellen, an denen Fragen gestellt werden</p></li>
+<li><p><strong>Zweige</strong><br>
+Mögliche Antworten oder Wege</p></li>
+<li><p><strong>Blattknoten</strong><br>
+Endpunkte mit dem Ergebnis</p></li>
+</ul>
+<p>Jeder Weg von der Wurzel bis zu einem Blatt beschreibt eine komplette Entscheidungsregel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Root-Node.gif" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Beispiel Entscheidungsbaum</figcaption>
+</figure>
+</div>
+<hr>
 </section>
-<section id="einsatzgebiete" class="level1">
-<h1>Einsatzgebiete</h1>
-<p>• Businessanalysen: Bewertung von Geschäftsideen • Medizin: Diagnoseunterstützung • Maschinelles Lernen: Klassifikation in Entscheidungsmodelle • Softwareentwicklung: Steuerung von Abläufen/Benutzer besonders in der KI genutzt</p>
+<section id="arten-von-entscheidungsbäumen" class="level2">
+<h2 class="anchored" data-anchor-id="arten-von-entscheidungsbäumen">Arten von Entscheidungsbäumen</h2>
+<p>Es gibt verschiedene Typen, je nach Problem:</p>
+<ul>
+<li><p><strong>Klassifikationsbäume</strong><br>
+Ergebnis ist eine Kategorie (z. B. Ja/Nein)<br>
+→ „Was ist es?“</p></li>
+<li><p><strong>Regressionsbäume</strong><br>
+Ergebnis ist ein Zahlenwert (z. B. Preis)<br>
+→ „Wie viel ist es?“</p></li>
+<li><p><strong>Random Forests</strong><br>
+Kombination aus vielen Entscheidungsbäumen<br>
+→ genauere Ergebnisse durch mehrere Modelle</p></li>
+</ul>
+<hr>
 </section>
-<section id="code" class="level1">
-<h1>Code</h1>
-<p>Hier ist ein einfaches Beispiel für einen Code-Block in Quarto:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Hello, World!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="wie-arbeitet-der-algorithmus" class="level2">
+<h2 class="anchored" data-anchor-id="wie-arbeitet-der-algorithmus">Wie arbeitet der Algorithmus?</h2>
+<p>Ein Entscheidungsbaum versucht, Daten so aufzuteilen, dass ähnliche Dinge zusammenkommen.</p>
+<p>Ablauf:</p>
+<ol type="1">
+<li>Der Algorithmus sucht die beste Frage, um Daten zu trennen<br>
+</li>
+<li>Die Daten werden in Gruppen aufgeteilt<br>
+</li>
+<li>Dieser Vorgang wird wiederholt<br>
+</li>
+<li>Am Ende entstehen möglichst „reine“ Gruppen</li>
+</ol>
+<p>Das Ziel ist, dass jede Gruppe möglichst eindeutig ist.</p>
+<hr>
+</section>
+<section id="vorteile" class="level2">
+<h2 class="anchored" data-anchor-id="vorteile">Vorteile</h2>
+<ul>
+<li>leicht verständlich<br>
+</li>
+<li>gut nachvollziehbar<br>
+</li>
+<li>visuell darstellbar<br>
+</li>
+<li>vielseitig einsetzbar</li>
+</ul>
+<hr>
+</section>
+<section id="nachteile-typische-fehler" class="level2">
+<h2 class="anchored" data-anchor-id="nachteile-typische-fehler">Nachteile / typische Fehler</h2>
+<ul>
+<li>kann zu komplex werden (zu viele Verzweigungen)<br>
+</li>
+<li>passt sich manchmal zu stark an Trainingsdaten an<br>
+</li>
+<li>nicht immer die beste Methode für jedes Problem</li>
+</ul>
+<hr>
+</section>
+<section id="einsatzgebiete" class="level2">
+<h2 class="anchored" data-anchor-id="einsatzgebiete">Einsatzgebiete</h2>
+<p>Entscheidungsbäume werden in vielen Bereichen verwendet:</p>
+<ul>
+<li><strong>Business</strong> → Entscheidungen analysieren<br>
+</li>
+<li><strong>Medizin</strong> → Diagnoseunterstützung<br>
+</li>
+<li><strong>KI / Machine Learning</strong> → Daten klassifizieren<br>
+</li>
+<li><strong>Softwareentwicklung</strong> → Abläufe modellieren</li>
+</ul>
+<hr>
+</section>
+<section id="beispiel-aus-dem-maschinellen-lernen" class="level2">
+<h2 class="anchored" data-anchor-id="beispiel-aus-dem-maschinellen-lernen">Beispiel aus dem maschinellen Lernen</h2>
+<p>Ein bekanntes Beispiel für Entscheidungsbäume ist die <strong>Bestimmung von Blumenarten</strong> mit dem <strong>Iris-Datensatz</strong>.<br>
+Dieser Datensatz enthält Messwerte von Schwertlilien, zum Beispiel:</p>
+<ul>
+<li>Länge des Kelchblatts</li>
+<li>Breite des Kelchblatts</li>
+<li>Länge des Blütenblatts</li>
+<li>Breite des Blütenblatts</li>
+</ul>
+<p>Der Entscheidungsbaum versucht anhand dieser Merkmale zu erkennen, um welche Blumenart es sich handelt.</p>
+<p>Zum Beispiel könnte der Baum vereinfacht so entscheiden:</p>
+<ul>
+<li>Ist die Blütenblattlänge kleiner als 2,5 cm?<br>
+→ Ja: <strong>Setosa</strong></li>
+<li>Wenn nein: Ist die Blütenblattbreite kleiner als 1,75 cm?<br>
+→ Ja: <strong>Versicolor</strong></li>
+<li>Sonst: <strong>Virginica</strong></li>
+</ul>
+<p>So trifft der Entscheidungsbaum Schritt für Schritt Entscheidungen, bis am Ende eine Klasse feststeht.</p>
+<section id="beispielcode" class="level3">
+<h3 class="anchored" data-anchor-id="beispielcode">Beispielcode</h3>
+<div id="3395b35c" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten laden</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> iris.data, iris.target</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Aufteilen der Daten</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Modell erstellen</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>clf.fit(X_train, y_train)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Genauigkeit prüfen</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> clf.score(X_test, y_test)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Genauigkeit: </span><span class="sc">{</span>score <span class="op">*</span> <span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Baum darstellen</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plot_tree(</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    clf,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    filled<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    feature_names<span class="op">=</span>iris.feature_names,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>iris.target_names</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
