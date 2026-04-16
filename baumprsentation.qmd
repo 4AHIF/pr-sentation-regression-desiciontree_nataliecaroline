@@ -45,9 +45,10 @@ format:
 - Was ist ein Entscheidungsbaum?
 - Arten von Entscheidungsbäumen
 - Aufbau eines Entscheidungsbaumes
-- Die Logik: Warum entsteht eine Treppenstruktur?
-- Wie lernt der Algorithmus? (Der Lernprozess)
-- Einsatzgebiete & Vorteile
+- Die Logik: Warum entsteht eine Treppe?
+- Wie lernt der Algorithmus? 
+- Einsatzgebiete 
+- Vorteile
 - Live-Coding Demo
 
 # Was ist ein Entscheidungsbaum?
@@ -81,10 +82,10 @@ format:
 
 # Wie lernt der Algorithmus?
 
-1. **Split-Suche:** Er prüft für jedes Merkmal, welcher Schwellenwert den Fehler (Varianz) am stärksten senkt.
-2. **Daten-Teilung:** Er spaltet die Daten in zwei Gruppen.
-3. **Rekursion:** Dieser Prozess wiederholt sich für jede Gruppe, bis ein Stopp-Kriterium erreicht ist (z.B. `max_depth`).
-4. **Mittelwert:** In den "Blättern" wird der finale Durchschnitt gespeichert.
+- **Split-Suche:** Er prüft für jedes Merkmal, welcher Schwellenwert den Fehler (Varianz) am stärksten senkt..
+- **Daten-Teilung:** Er spaltet die Daten in zwei Gruppen.
+- **Rekursion:** Dieser Prozess wiederholt sich für jede Gruppe, bis ein Stopp-Kriterium erreicht ist (z.B. max_depth).
+- **Mittelwert:** In den "Blättern" wird der finale Durchschnitt gespeichert.
 
 # Einsatzgebiete (Versicherung)
 
@@ -108,30 +109,42 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeRegressor
 
-# Daten erzeugen (Sinus-Kurve mit Rauschen)
-rng = np.random.RandomState(1)
-X = np.sort(5 * rng.rand(80, 1), axis=0)
-y = np.sin(X).ravel() + np.random.normal(0, 0.1, X.shape[0])
+# X = Kosten (in 1000 €), y = Gewinn (in 1000 €)
+kosten = np.array([100, 500, 1500, 3500, 5000, 6000, 8000, 9500, 12000, 14000]).reshape(-1, 1)
+gewinn = np.array([1000, 3000, 5000, 8000, 6500, 7000, 15000, 20000, 21000, 25000])
 ```
 
-## Vorhersage für die Grafik
+## Den Bauen trainieren
 ```{python}
 #| echo: true
-# max_depth bestimmt die Anzahl der Stufen
-regr = DecisionTreeRegressor(max_depth=3)
-regr.fit(X, y)
+# Baum erstellen (max_depth=2 bedeutet: nur 2 Fragen erlaubt)
+baum = DecisionTreeRegressor(max_depth=2)
 
-X_test = np.arange(0.0, 5.0, 0.01)[:, np.newaxis]
-y_pred = regr.predict(X_test)
+# Baum lernt aus den Daten
+baum.fit(kosten, gewinn)
 ```
+
+## Vorhersage für neue Kosten
+Der Baum hat jetzt intern Kisten gebildet(baum.fit(kosten, gewinn)). 
+Zum Beispiel:
+
+Kiste A: Alle Spiele, die weniger als 4000 € gekostet haben.
+
+Kiste B: Alle Spiele zwischen 4000 € und 9000 €.
+
+Kiste C: Alle Spiele über 9000 €.
 
 ## Den Baum grafisch darstellen
 ```{python}
 #| echo: true
-plt.figure(figsize=(10, 5))
-plt.scatter(X, y, s=20, edgecolor="black", c="darkorange", label="Daten")
-plt.plot(X_test, y_pred, color="cornflowerblue", label="Vorhersage", linewidth=2)
-plt.title("Decision Tree Regression (max_depth=3)")
+# Wir testen alle Kosten-Werte von 0 bis 15.000
+test_kosten = np.arange(0, 15000, 1).reshape(-1, 1)
+vorhersage = baum.predict(test_kosten)
+
+plt.scatter(kosten, gewinn, color="red", label="Echte Spiele") # Die Punkte
+plt.plot(test_kosten, vorhersage, color="blue", label="Baum-Vorhersage") # Die Treppe
+plt.xlabel("Produktionskosten")
+plt.ylabel("Gewinn")
 plt.legend()
 plt.show()
 ```
