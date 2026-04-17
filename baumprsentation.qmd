@@ -66,8 +66,8 @@ format:
 # Aufbau eines Entscheidungsbaumes
 
 - **Wurzelknoten:** Der Startpunkt (die erste große Frage)
-- **Entscheidungsknoten:** Weitere Verzweigungen basierend auf Bedingungen.
-- **Blattknoten:** Die Endpunkte. Hier wird der **finale Vorhersagewert** ausgegeben
+- **Entscheidungsknoten:** Weitere Verzweigungen basierend auf Bedingungen
+- **Blattknoten:** Endpunkte; hier wird der **finale Vorhersagewert** ausgegeben
 
 
 # Beispiel eines Entscheidungsbaums
@@ -137,6 +137,7 @@ baum.fit(kosten, gewinn)
 
 ## Vorhersage für neue Kosten
 Der Baum hat jetzt intern Kisten gebildet(baum.fit(kosten, gewinn)).
+
 Zum Beispiel:
 
 Kiste A: Alle Spiele, die weniger als 4000 € gekostet haben
