@@ -70,6 +70,12 @@ format:
 - **Blattknoten:** Die Endpunkte. Hier wird der **finale Vorhersagewert** ausgegeben.
 
 
+# Beispiel eines Entscheidungsbaums
+
+![](Root-Node.gif){width="50%" fig-align="center"}
+
+
+
 
 # Die Logik: Warum entsteht eine Treppe?
 
@@ -77,6 +83,11 @@ format:
 - **Mittelwertbildung:** In jeder Region berechnet der Baum den **Durchschnittswert** aller dort liegenden Trainingsdaten.
 - **Konstanz:** Innerhalb einer Region gibt der Baum immer denselben Wert aus (flache Linie).
 - **Sprung:** An der Grenze zur nächsten Region springt der Wert abrupt an $\rightarrow$ **Treppeneffekt**.
+
+
+# Beispiel für eine Treppe
+
+![](reg_lin_trees.png){width="50%" fig-align="center"}
 
 
 
