@@ -53,21 +53,21 @@ format:
 
 # Was ist ein Entscheidungsbaum?
 
-- **Grafisches Modell:** Darstellung von Entscheidungsprozessen.
-- **Ziel:** Vorhersage eines Wertes basierend auf einer Reihe von "Wenn-Dann"-Regeln.
-- **Struktur:** Eine Hierarchie von Fragen, die zu einem Endergebnis führen.
+- **Grafisches Modell:** Darstellung von Entscheidungsprozessen
+- **Ziel:** Vorhersage eines Wertes basierend auf einer Reihe von "Wenn-Dann"-Regeln
+- **Struktur:** Eine Hierarchie von Fragen, die zu einem Endergebnis führen
 
 # Arten von Entscheidungsbäumen
 
-- **Klassifikationsbäume:** Kategorische Zielvariable (z.B. "Ist das Bild ein Hund oder eine Katze?").
-- **Regressionsbäume:** Kontinuierliche Zielvariable (z.B. Preis, Temperatur, Risiko-Score).
-- **Zeitreihen-Bäume:** Vorhersage von zeitabhängigen Daten.
+- **Klassifikationsbäume:** Kategorische Zielvariable (z.B. "Ist das Bild ein Hund oder eine Katze?")
+- **Regressionsbäume:** Kontinuierliche Zielvariable (z.B. Preis, Temperatur, Risiko-Score)
+- **Zeitreihen-Bäume:** Vorhersage von zeitabhängigen Daten
 
 # Aufbau eines Entscheidungsbaumes
 
-- **Wurzelknoten:** Der Startpunkt (die erste große Frage).
+- **Wurzelknoten:** Der Startpunkt (die erste große Frage)
 - **Entscheidungsknoten:** Weitere Verzweigungen basierend auf Bedingungen.
-- **Blattknoten:** Die Endpunkte. Hier wird der **finale Vorhersagewert** ausgegeben.
+- **Blattknoten:** Die Endpunkte. Hier wird der **finale Vorhersagewert** ausgegeben
 
 
 # Beispiel eines Entscheidungsbaums
@@ -79,10 +79,10 @@ format:
 
 # Die Logik: Warum entsteht eine Treppe?
 
-- **Partitionierung:** Der Baum teilt die Daten in rechteckige Regionen auf.
-- **Mittelwertbildung:** In jeder Region berechnet der Baum den **Durchschnittswert** aller dort liegenden Trainingsdaten.
-- **Konstanz:** Innerhalb einer Region gibt der Baum immer denselben Wert aus (flache Linie).
-- **Sprung:** An der Grenze zur nächsten Region springt der Wert abrupt an $\rightarrow$ **Treppeneffekt**.
+- **Partitionierung:** Der Baum teilt die Daten in rechteckige Regionen auf
+- **Mittelwertbildung:** In jeder Region berechnet der Baum den **Durchschnittswert** aller dort liegenden Trainingsdaten
+- **Konstanz:** Innerhalb einer Region gibt der Baum immer denselben Wert aus (flache Linie)
+- **Sprung:** An der Grenze zur nächsten Region springt der Wert abrupt an $\rightarrow$ **Treppeneffekt**
 
 
 # Beispiel für eine Treppe
@@ -93,23 +93,23 @@ format:
 
 # Wie lernt der Algorithmus?
 
-- **Split-Suche:** Er prüft für jedes Merkmal, welcher Schwellenwert den Fehler (Varianz) am stärksten senkt..
-- **Daten-Teilung:** Er spaltet die Daten in zwei Gruppen.
-- **Rekursion:** Dieser Prozess wiederholt sich für jede Gruppe, bis ein Stopp-Kriterium erreicht ist (z.B. max_depth).
-- **Mittelwert:** In den "Blättern" wird der finale Durchschnitt gespeichert.
+- **Split-Suche:** Er prüft für jedes Merkmal, welcher Schwellenwert den Fehler (Varianz) am stärksten senkt
+- **Daten-Teilung:** Er spaltet die Daten in zwei Gruppen
+- **Rekursion:** Dieser Prozess wiederholt sich für jede Gruppe, bis ein Stopp-Kriterium erreicht ist (z.B. max_depth)
+- **Mittelwert:** In den "Blättern" wird der finale Durchschnitt gespeichert
 
 # Einsatzgebiete (Versicherung)
 
-- **Risikobewertung:** Vorhersage der Schadenshöhe in Euro.
-- **Beispiel-Regel:** - WENN Alter < 25 UND PS > 150 $\rightarrow$ Hohes Risiko (Stufe nach oben).
-- **Vorteil:** Hohe **Transparenz** für Regulierungsbehörden – jede Entscheidung ist nachvollziehbar.
+- **Risikobewertung:** Vorhersage der Schadenshöhe in Euro
+- **Beispiel-Regel:** - WENN Alter < 25 UND PS > 150 $\rightarrow$ Hohes Risiko (Stufe nach oben)
+- **Vorteil:** Hohe **Transparenz** für Regulierungsbehörden – jede Entscheidung ist nachvollziehbar
 
 # Vorteile auf einen Blick
 
-- **Nachvollziehbarkeit:** "White-Box"-Modell (keine Black-Box).
-- **Einfachheit:** Leicht zu visualisieren und zu verstehen.
-- **Flexibilität:** Kann nicht-lineare Zusammenhänge ohne Vorwissen erkennen.
-- **Robustheit:** Wenig Vorbereitung der Daten (Scaling) nötig.
+- **Nachvollziehbarkeit:** "White-Box"-Modell (keine Black-Box)
+- **Einfachheit:** Leicht zu visualisieren und zu verstehen
+- **Flexibilität:** Kann nicht-lineare Zusammenhänge ohne Vorwissen erkennen
+- **Robustheit:** Wenig Vorbereitung der Daten (Scaling) nötig
 
 # Code Beispiel: Die Treppe visualisieren
 
@@ -136,14 +136,14 @@ baum.fit(kosten, gewinn)
 ```
 
 ## Vorhersage für neue Kosten
-Der Baum hat jetzt intern Kisten gebildet(baum.fit(kosten, gewinn)). 
+Der Baum hat jetzt intern Kisten gebildet(baum.fit(kosten, gewinn)).
 Zum Beispiel:
 
-Kiste A: Alle Spiele, die weniger als 4000 € gekostet haben.
+Kiste A: Alle Spiele, die weniger als 4000 € gekostet haben
 
-Kiste B: Alle Spiele zwischen 4000 € und 9000 €.
+Kiste B: Alle Spiele zwischen 4000 € und 9000 €
 
-Kiste C: Alle Spiele über 9000 €.
+Kiste C: Alle Spiele über 9000 €
 
 ## Den Baum grafisch darstellen
 ```bash
